@@ -1,15 +1,21 @@
 #!/usr/bin/python3
-    """Square Class
+"""Square Class
 
-    This is a brief description of your class.
+A Square Class
 
-    """
+"""
+
+
 class Square:
+
     def __init__(self, size):
         """__init__
 
-        This is a brief description of your method.
+        The __init__ method initializes the size value
+        of the square.
 
-        Provide more detailed information about the purpose and usage of your method here.
+        Attributes:
+            size (int): The size of the square.
+
         """
         self.__size = size
