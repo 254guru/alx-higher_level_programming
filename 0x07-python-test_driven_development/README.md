@@ -25,8 +25,8 @@ Limitations of Unit Testing:
 ## Intergration Testing
 Integration testing is defined as the testing of combined parts of an application to determine if they function correctly. Integration testing can be done in two ways: Bottom-up integration testing and Top-down integration testing.
 
-	**Bottom-up integration**: This testing begins with unit testing, followed by tests of progressively higher-level combinations of units called modules or builds.
-	**Top-down integration:** In this testing, the highest-level modules are tested first and progressively, lower-level modules are tested thereafter.
+**Bottom-up integration**: This testing begins with unit testing, followed by tests of progressively higher-level combinations of units called modules or builds.
+**Top-down integration:** In this testing, the highest-level modules are tested first and progressively, lower-level modules are tested thereafter.
 In a comprehensive software development environment, bottom-up testing is usually done first, followed by top-down testing. The process concludes with multiple tests of the complete application, preferably in scenarios designed to mimic actual situations.
 
 ## System Testing
