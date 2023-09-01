@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""Square Class
-
-A Square Class
-
-"""
+"""Square Class"""
 
 
 class Square:
+    """
+    Attributes:
+     __size (int): size of square
+     method
+     __init__ : Initializes a new square instance with optional size
+     """
 
     def __init__(self, size=0):
         """__init__
