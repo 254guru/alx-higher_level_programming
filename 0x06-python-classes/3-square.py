@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-class Square:
-    """Square Class
+"""Square Class"""
 
-    A Square Class
+
+class Square:
+    """
+    Attributes:
+    Size (int): size of square
 
     """
 
@@ -30,7 +33,8 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Returns the current square area
+        """
+        Returns the current square area
 
         """
         return self.__size ** 2
