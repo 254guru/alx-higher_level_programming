@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Square Class
+"""Square Class"""
 
-This is a brief description of your module.
-
-"""
 
 class Square:
+    """
+    empty class
+    """
     pass
