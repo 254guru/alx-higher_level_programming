@@ -16,7 +16,7 @@ class Square:
         TypeError: if size is not int
         ValueError: if size is less than 0
         """
-        self.size = size  # Using the setter to set the size
+        self.size = size
 
     @property
     def size(self):
@@ -47,7 +47,9 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
+        """
+        Private instance attribute: Size
+        """
     def area(self):
         """
         returns current square area
