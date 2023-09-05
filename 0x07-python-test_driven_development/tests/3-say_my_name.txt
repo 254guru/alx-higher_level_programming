@@ -17,7 +17,7 @@ Test cases:
 
 # correct param1
 	>>> say_my_name("kevin")
-	My name is kevin
+	My name is kevin 
 
 # correct param2
 	>>> say_my_name("kevin", "oluda")
