@@ -2,10 +2,11 @@
 """
 Rectangle module
 """
+
+
 class Rectangle:
     """
     an empty rectangle class that defines a rectangle
-    
     Args:
     width (int): int
     height (int): int
@@ -28,7 +29,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-         """
+        """
         Args:
            value (int): int
         Raises:
@@ -50,7 +51,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-         """
+        """
         Args:
            value (int): int
         Raises:
