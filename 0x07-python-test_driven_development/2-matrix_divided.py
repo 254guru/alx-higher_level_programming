@@ -8,15 +8,12 @@ matrix division module
 def matrix_divided(matrix, div):
     """
     function that divides all elements of a matrix
-    
     Args:
         matrix (:obj:list of :obj:int): Matrix
         div (int:float): integer or float
-    
     Raises:
         TypeError: must be list of lists and each row
         must have the same size
-    
     Returns:
         list:list: result
     """
@@ -26,20 +23,24 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+                (list of lists) of integers/floats")
     try:
         size = len(matrix[0])
     except Exception:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+                (list of lists) of integers/floats")
     for i in matrix:
         if not isinstance(i, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix \
+                    (list of lists) of integers/floats")
         if len(i) != size:
             raise TypeError("Each row of the matrix must have the same size")
         new_row = []
         for number in i:
             if not isinstance(number, int) and not isinstance(number, float):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix \
+                        (list of lists) of integers/floats")
             initial = float(number / div)
             result = float("{:.2f}".format(initial))
             new_row.append(result)
