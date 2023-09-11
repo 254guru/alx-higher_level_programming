@@ -12,7 +12,6 @@ class MyList(list):
         """
         instance method that prints list
         """
+        if issubclass(MyList, list):
         sorted_list = sorted(self)
-        for item in sorted_list:
-            print(item, end=' ')
-        print()
+        print(sorted_list)
