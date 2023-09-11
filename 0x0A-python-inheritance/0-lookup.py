@@ -15,6 +15,6 @@ def lookup(obj):
     return list
     """
     attributes_and_methods = dir(obj)
-    filtered_attributes_and_methods = [item for item in attributes_and_methods \
-            if not item.startswith('--')]
+    filtered_attributes_and_methods = [item for item in
+attributes_and_methods if not item.startswith('--')]
     return filtered_attributes_and_methods
