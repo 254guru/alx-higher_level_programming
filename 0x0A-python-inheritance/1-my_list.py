@@ -14,6 +14,5 @@ class MyList(list):
         """
         instance method that prints list
         """
-        sorted_list = super().copy()
-        sorted_list.sort()
-        print(sorted_list)
+        if issubclass(MyList, list):
+            print(sorted(self))
