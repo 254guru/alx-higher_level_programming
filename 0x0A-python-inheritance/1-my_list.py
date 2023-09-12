@@ -13,5 +13,4 @@ class MyList(list):
         """
         instance method that prints list
         """
-        if issubclass(MyList, list):
-            print(sorted(self))
+        print(sorted(self))
