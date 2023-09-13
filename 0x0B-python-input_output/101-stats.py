@@ -3,6 +3,9 @@ import sys
 
 
 def print_info():
+    """
+    print info from a line
+    """
     print('File size: {:d}'.format(file_size))
 
     for scode, code_times in sorted(status_codes.items()):
@@ -36,12 +39,12 @@ try:
 
             if str(status) in status_codes.keys():
                 status_codes[str(status)] += 1
-        except:
+        except ValueError:
             pass
 
         try:
             file_size += int(pieces[-1])
-        except:
+        except ValueError:
             pass
 
         lc += 1
