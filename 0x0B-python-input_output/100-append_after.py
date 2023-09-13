@@ -12,7 +12,7 @@ def append_after(filename="", search_string="", new_string=""):
 
     with open(filename, 'r') as file:
         for line in file:
-            modified_lines.append(line)      
+            modified_lines.append(line)
             if search_string in line:
                 modified_lines.append(new_string)
 
