@@ -2,19 +2,22 @@
 """
 import module
 """
-from os import path
-from sys import argv
+
+
+import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+if __name__ == "__main__":
 
-filename = "add_item.json"
+    filename = "add_item.json"
 
-if path.isfile(filename):
-    my_list = load_from_json_file(filename)
-else:
-    my_list = []
-for i in range(1, len(argv)):
-    my_list.append(argv[i])
+    try:
+        my_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        my_list = []
 
-save_to_json_file(my_list, filename)
+    for item in sys.argv[1:]:
+        my_list.append(item)
+
+    save_to_json_file(my_list, filename)
