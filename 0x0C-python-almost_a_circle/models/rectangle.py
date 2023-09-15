@@ -115,11 +115,14 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         updates attributes using arguments in order (id, width, height, x, y)
         """
-        args_names = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            if i < len(arg_names):
+        if args:
+            args_names = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
                 setattr(self, arg_names[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
