@@ -102,6 +102,8 @@ class Rectangle(Base):
         """
         display the rectangle instance using '#' pound sign
         """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
             print("#" * self.__width)
 
