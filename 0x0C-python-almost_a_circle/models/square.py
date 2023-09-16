@@ -2,7 +2,7 @@
 """
 import module
 """
-from mpdels.rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -14,6 +14,21 @@ class Square(Rectangle):
         constructor for square class
         """
         super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        """
+        getter for size
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        setter for size
+        """
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """
