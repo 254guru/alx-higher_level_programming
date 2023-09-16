@@ -37,3 +37,15 @@ class Square(Rectangle):
         return '[Square] ({:d}) {:d}/{:d} - {:d}'.format(
             self.id, self.x, self.y, self.width
         )
+
+    def update(self, *args, **kwargs):
+        """
+        update attributes using either args or kwargs
+        """
+        if args:
+            args_names = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, arg_names[i], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
