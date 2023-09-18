@@ -57,7 +57,7 @@ class Testrectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r4 = Rectangle()
 
-        def test_type_parameter(self):
+    def test_type_parameter(self):
         """
         Test different types of parameters
         for a Rectangle class
