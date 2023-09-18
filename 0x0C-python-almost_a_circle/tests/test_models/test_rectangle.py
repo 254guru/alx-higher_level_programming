@@ -8,7 +8,7 @@ from models.rectangle import Rectangle
 import pep8
 
 
-class Test_rectangle(unittest.TestCase):
+class Testrectangle(unittest.TestCase):
     """
     test class
     """
@@ -56,3 +56,81 @@ class Test_rectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             r4 = Rectangle()
+
+        def test_type_parameter(self):
+        """
+        Test different types of parameters
+        for a Rectangle class
+        """
+        with self.assertRaises(TypeError):
+            Rectangle(1.23, 3)
+            raise TypeError()
+
+        with self.assertRaises(ValueError):
+            Rectangle(-1234, 56)
+            raise ValueError()
+
+        with self.assertRaises(TypeError):
+            Rectangle('', 2)
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(True, 3)
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2.34)
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, "Hello")
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(6, False)
+            raise TypeError()
+
+        with self.assertRaises(ValueError):
+            Rectangle(5, -123456)
+            raise ValueError
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 1.50)
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, 6, "test")
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, 7, False)
+            raise TypeError()
+
+        with self.assertRaises(ValueError):
+            Rectangle(5, 7, -4798576)
+            raise ValueError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, 1, 1, 1.23)
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, 6, 5, "test")
+            raise TypeError()
+
+        with self.assertRaises(TypeError):
+            Rectangle(5, 7, 7, False)
+            raise TypeError()
+
+        with self.assertRaises(ValueError):
+            Rectangle(5, 9, 5, -576398576)
+            raise ValueError()
+
+    def test_string(self):
+        """
+        Test string parameters for a
+        Rectangle class
+        """
+        with self.assertRaises(TypeError):
+            Rectangle('Monty', 'Python')
+
