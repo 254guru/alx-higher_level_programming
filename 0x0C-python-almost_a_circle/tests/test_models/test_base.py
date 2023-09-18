@@ -102,7 +102,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(base_instance), Base)
         self.assertTrue(isinstance(base_instance, Base))
 
-        def test_id_as_positive(self):
+    def test_id_as_positive(self):
         """
         Test for a positive Base Class id
         """

@@ -27,7 +27,7 @@ class Base:
         """
         convert a list of dictionaries to a json string
         """
-        if list_dictionaries is Nne or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -78,12 +78,16 @@ class Base:
         """
         load a list of instances from a json file
         """
-        filename = cls.__name__ + ".json"
-        try:
-            with open(filename, "r") as file:
-                json_string = file.read()
-                dictionaries = cls.from_json_string(json_string)
-                instances = [cls.create(**dictionary) for dictionary in dictionarie]
-                return instances
-            except FileNotFoundError:
-                return []
+        filename = cls.__name__ + '.json'
+
+        if path.exists(filename) is False:
+            return []
+
+        with open(filename, mode='r', encoding='utf-8') as f:
+            objs = cls.from_json_string(f.read())
+            instances = []
+
+            for elem in objs:
+                instances.append(cls.create(**elem))
+
+            return instances
