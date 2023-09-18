@@ -48,3 +48,25 @@ class Base:
                 json_attrs.append(elem.to_dictionary())
 
             return f.write(cls.to_json_string(json_attrs))
+
+    def from_json_string(json_string):
+        """
+        convert a json string to a list of dictionaries
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    def create(cls, **dictionary):
+        """
+        create an instance with attributes set from a dictionary
+        """
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy.instance = cls(1)
+        else:
+            raise TypeError("Unexpected class type")
+
+        dummy_instance.update(**dictionary)
+        return dummy_instance
