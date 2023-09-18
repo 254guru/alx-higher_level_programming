@@ -8,7 +8,6 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-
 class TestSquare(unittest.TestCase):
     """
     A class to test the Square Class
