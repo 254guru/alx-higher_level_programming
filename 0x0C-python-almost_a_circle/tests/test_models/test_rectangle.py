@@ -135,5 +135,5 @@ class TestRectangle(unittest.TestCase):
             Rectangle(5, 9, 5, -4798576398576)
             raise ValueError()
 
-if __name__ = '__main__':
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()
