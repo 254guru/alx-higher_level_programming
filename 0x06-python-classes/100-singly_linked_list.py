@@ -12,8 +12,8 @@ class Node:
         """
         instantation
         """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -38,7 +38,7 @@ class Node:
     @property
     def next_node(self):
         """
-        get the nest node in the linked list
+        get the next node in the linked list
         """
         return self.__next_node
 
@@ -51,6 +51,12 @@ class Node:
             raise TypeError("next_node must be a Node object or None")
         self.__next_node = value
 
+    def __str__(self):
+        """
+        data string
+        """
+        return str(self.__data)
+
 
 class SinglyLinkedList:
     """
@@ -60,7 +66,7 @@ class SinglyLinkedList:
         """
         initialize an empty singly linked list
         """
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """
@@ -69,13 +75,13 @@ class SinglyLinkedList:
         """
         new_node = Node(value)
 
-        if self.head is None or self.head.data > value:
+        if self.__head is None or self.__head.data > value:
             # insert at beginning of the list
-            new_node.next_node = self.head
-            self.head = new_node
+            new_node.next_node = self.__head
+            self.__head = new_node
         else:
             # traverse the list to find the correct position
-            current = self.head
+            current = self.__head
             while current.next_node
             is not None and current.next_node.data < value:
                 current = current.next_node
@@ -87,10 +93,10 @@ class SinglyLinkedList:
     def __str__(self):
         """
         convert the linked list to a string for printing
-        return string representation of of the linked list
+        return string representation of the linked list
         """
         result = ""
-        current = self.head
+        current = self.__head
         while current:
             result += str(current.data) + "\n"
             current = current.next_node
