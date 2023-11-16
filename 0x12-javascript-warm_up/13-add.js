@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-  global.add = function add (a, b) {
+  global.add = function (a, b) {
     return a + b;
 };
