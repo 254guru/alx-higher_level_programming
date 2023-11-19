@@ -40,4 +40,3 @@ if __name__ == "__main__":
     else:
         username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
         add_state(username, password, database)
-
