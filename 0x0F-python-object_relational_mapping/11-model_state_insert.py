@@ -10,7 +10,9 @@ from model_state import Base, State
 
 
 def add_state(username, password, database):
-    
+    """
+    add a new state object to the database
+    """
     # Create a database engine
     engine = create_engine(f'mysql://{username}:{password}@localhost:3306/{database}')
 
@@ -35,6 +37,9 @@ def add_state(username, password, database):
     session.close()
 
 if __name__ == "__main__":
+    """
+    execute program
+    """
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database>")
     else:
