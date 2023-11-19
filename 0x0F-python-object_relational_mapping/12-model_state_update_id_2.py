@@ -5,7 +5,7 @@ from the database
 """
 
 
-import sys
+from sys import argv
 from sqlalchemy import create_engne
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
