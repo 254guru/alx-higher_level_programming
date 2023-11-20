@@ -1,11 +1,10 @@
 #!/usr/bin/node
-
 const dict = require('./101-data').dict;
-const newDict = {};
-Object.keys(dict).map(function (key) {
-  if (!Array.isArray(newDict[dict[key]])) {
-    newDict[dict[key]] = [];
+const obj = {};
+for (const key in dict) {
+  if (typeof (obj[dict[key]]) === 'undefined') {
+    obj[dict[key]] = [];
   }
-  newDict[dict[key]].push(key);
-});
-console.log(newDict);
+  obj[dict[key]].push(key);
+}
+console.log(obj);
