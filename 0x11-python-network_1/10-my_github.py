@@ -7,19 +7,16 @@ import requests
 import sys
 
 
-if len(sys.argv) < 3:
-    print("Usage: python script_name.py <username> <token>")
-    sys.exit(1)
+if __name__ == "__main__":
+    username = sys.argv[1]
+    token = sys.argv[2]
 
-username = sys.argv[1]
-token = sys.argv[2]
+    url = 'https://api.github.com/user'
 
-url = 'https://api.github.com/user'
+    response = requests.get(url, auth=(username, token))
 
-response = requests.get(url, auth=(username, token))
-
-if response.status_code == 200:
-    user_info = response.json()
-    print(f"Your GitHub user ID is: {user_info['id']}")
-else:
-    print("Failed to fetch user information. Check your credentials.")
+    if response.status_code == 200:
+        user_info = response.json()
+        print(user_info.get("id"))
+    else:
+        print("Not a valid JSON")
