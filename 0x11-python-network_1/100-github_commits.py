@@ -16,7 +16,7 @@ if __name__ == "__main__":
     url = "https://api.github.com/repos/{owner_name}/{repository_name}/commits"
     params = {'per_page': '10'}
 
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params)
 
     if response.status_code == 200:
         commits = response.json()
