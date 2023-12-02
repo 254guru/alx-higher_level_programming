@@ -10,19 +10,19 @@ import sys
 
 
 if __name__ == "__main__":
-    repository_name = sys.argv[1]
-    owner_name = sys.argv[2]
-
-    url = "https://api.github.com/repos/{owner_name}/{repository_name}/commits"
-    params = {'per_page': '10'}
-
-    response = requests.get(url, params=params)
-
+    commit_format = "{}: {}"
+    api_url = "https://api.github.com/repos/{}/{}/commits"
+    formatted_url = api_url.format(argv[2], argv[1])
+    
+    response = requests.get(formatted_url)
+    
     if response.status_code == 200:
-        commits = response.json()
-        for commit in commits:
-            sha = commit['sha']
-            author_name = commit['commit']['author']['name']
-            print(f"{sha}: {author_name}")
+        count = 0
+        for commit in response.json():
+            if count < 10:
+                sha = commit.get("sha")
+                author_name = commit.get("commit").get("author").get("name")
+                print(commit_format.format(sha, author_name))
+                count += 1
     else:
         print("Failed to fetch commits. Check repository and owner names.")
