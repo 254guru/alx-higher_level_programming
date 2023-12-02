@@ -9,16 +9,7 @@ import requests
 import sys
 
 
-if len(sys.argv) < 2:
-    print("Usage: python script_name.py <URL>")
-    sys.exit(1)
+if __name__ == "__main__":
+    req = requests.get(argv[1])
 
-url = sys.argv[1]
-
-response = requests.get(url)
-
-if 'X-Request-Id' in response.headers:
-    x_request_id = response.headers['X-Request-Id']
-    print(f"The value of X-Request-Id is: {x_request_id}")
-else:
-    print("X-Request-Id header not found in the response.")
+    print(req.headers.get('X-Request-Id'))
