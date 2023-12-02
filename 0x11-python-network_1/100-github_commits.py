@@ -13,9 +13,9 @@ if __name__ == "__main__":
     commit_format = "{}: {}"
     api_url = "https://api.github.com/repos/{}/{}/commits"
     formatted_url = api_url.format(argv[2], argv[1])
-    
+
     response = requests.get(formatted_url)
-    
+
     if response.status_code == 200:
         count = 0
         for commit in response.json():
