@@ -15,7 +15,6 @@ if __name__ == "__main__":
 
     url = "https://api.github.com/repos/{owner_name}/{repository_name}/commits"
     params = {'per_page': '10'}
-    headers = {'Accept': 'application/vnd.github.v3+json'}
 
     response = requests.get(url, params=params, headers=headers)
 
