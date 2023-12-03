@@ -2,7 +2,6 @@
 """
 fetches a link
 """
-
 import urllib.request
 
 
