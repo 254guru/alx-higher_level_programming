@@ -1,18 +1,25 @@
 #!/usr/bin/python3
 """
-fetches a link
+Fetches the URL: https://alx-intranet.hbtn.io/status
 """
-import urllib.request
+
+from urllib.request import Request, urlopen
 
 
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
-    req = urllib.request.Request(url)
+    request = Request(url)
 
-    with urllib.request.urlopen(req) as response:
-        body = response.read().decode('utf-8')
+    with urlopen(request) as response:
+        raw_content = response.read()
+        decoded_content = raw_content.decode('utf-8')
+
+        print('Body response:')
+        print('\t- type: {_type}'.format(_type=type(raw_content)))
+        print('\t- content: {_content}'.format(_content=raw_content))
+        print('\t- utf8 content: {_utf8_content}'.format(_utf8_content=decoded_content))
 
         # Displaying the body of the response with tabulation before each line
-        lines = body.split('\n')
+        lines = decoded_content.split('\n')
         for line in lines:
             print(f"\t- {line}")
