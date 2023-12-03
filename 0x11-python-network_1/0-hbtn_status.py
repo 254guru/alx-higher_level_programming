@@ -18,8 +18,3 @@ if __name__ == "__main__":
         print('\t- type: {_type}'.format(_type=type(raw_content)))
         print('\t- content: {_content}'.format(_content=raw_content))
         print('\t- utf8 content: {_utf8_content}'.format(_utf8_content=decoded_content))
-
-        # Displaying the body of the response with tabulation before each line
-        lines = decoded_content.split('\n')
-        for line in lines:
-            print(f"\t- {line}")
