@@ -23,6 +23,7 @@ def get_commits(repo_name, owner_name):
         author_name = commit['commit']['author']['name']
         print(f"{sha}: {author_name}")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python script_name.py repository_name owner_name")
